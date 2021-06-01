@@ -14,7 +14,7 @@ betterlockscreen --lock blur
 
 ![scrot2](https://github.com/pavanjadhaw/betterlockscreen.demo/raw/master/scrots/scrot2.png 'scrot2.png')
 
-> [Watch some of the features of betterlockscreen in action](https://www.youtube.com/watch?v=9Ng5FZwnn6M&feature=youtu.be)
+> [Watch some of the features of betterlockscreen in action](https://youtu.be/9Ng5FZwnn6M)
 
 ## Table of Contents
 
@@ -46,7 +46,7 @@ images as lockscreen background depending on argument provided by user.
 
 > Note: Make sure your system has all dependencies satisfied
 
-- [i3lock-color](https://github.com/Raymo111/i3lock-color) - i3lock fork with additional features( >= 2.11-c )
+- [i3lock-color](https://github.com/Raymo111/i3lock-color) - i3lock fork with additional features(`>= 2.13.c.3`)
 - [imagemagick](https://www.imagemagick.org/script/index.php) - To apply effects to images
 - [xdpyinfo](https://www.x.org/archive/X11R7.7/doc/man/man1/xdpyinfo.1.xhtml), [xrandr](https://www.x.org/wiki/Projects/XRandR/), [bc](https://www.gnu.org/software/bc/) and [feh](https://feh.finalrewind.org/) - To find screen resolution, set custom blur level and wallpaper handling.
 
@@ -202,10 +202,9 @@ alt + shift + x
 ```
 
 ### Lockscreen when suspended(systemd service)
-
 ```sh
 # move service file to proper dir (the aur package does this for you)
-cp betterlockscreen@.service /etc/systemd/system/
+cp betterlockscreen@.service /usr/lib/systemd/system/
 
 # enable systemd service
 systemctl enable betterlockscreen@$USER
@@ -213,11 +212,16 @@ systemctl enable betterlockscreen@$USER
 # disable systemd service
 systemctl disable betterlockscreen@$USER
 
-
 # Note: Now you can call systemctl suspend to suspend your system
 # and betterlockscreen service will be activated
 # so when your system wakes your screen will be locked.
 ```
+
+**Hint:** The systemd-unit expects betterlockscreen to be installed in "/usr/local/bin", so maybe you want to check or change this!
+
+Resources and more informations:
+ * https://gist.github.com/Raymo111/91ffd256b7aca6a85e8a99d6331d3b7b
+ * https://github.com/Raymo111/i3lock-color/issues/174#issuecomment-687149213
 
 ---
 
@@ -240,7 +244,7 @@ Betterlockscreen is under [MIT](https://github.com/pavanjadhaw/betterlockscreen/
 
 - Hat tip to anyone who's code was used
 - Thanks to those who contributed to make it better
-- Inspiration - r/unixporn
+- Inspiration - [r/unixporn](https://www.reddit.com/r/unixporn)
 
 [logo]: .github/hero.png
 [website]: https://mdxjs.com
